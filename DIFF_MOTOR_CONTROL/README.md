@@ -1,2 +1,2 @@
 # DIFF_MOTOR_CONTROL
-  两轮步进电机差速控制
+  两轮步进电机PID差速控制
