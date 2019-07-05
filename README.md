@@ -12,4 +12,4 @@ References
 
 1.ROS WIKI
 
-2.ROS机器人开发实践
+2.ROS机器人开发实践  --胡春旭
