@@ -1,0 +1,8 @@
+prefix=/home/lei/catkin_ws/devel
+
+Name: mrobot_description
+Description: Description of mrobot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lei/catkin_ws/devel/lib 
+Requires: 
