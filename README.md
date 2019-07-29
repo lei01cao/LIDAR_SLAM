@@ -12,12 +12,14 @@
 3.树莓派3B+
     ![RaspberryPi-3B+](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/RaspberryPi-3B%2B.jpg)
 
-4.两轮步进电机组(减速比)
+4.两轮步进电机组(减速比30 编码器精度780)
     ![step_motor](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/step_motor.jpg)
 
 5.思岚A1激光雷达  
     ![rplidar-A1](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/rplidar-A1.jpg)
 
+6.小车整体
+    ![robot_side](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/robot_side.jpg)
 
 运行步骤：
 
