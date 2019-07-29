@@ -1,0 +1,2 @@
+mrobot_description:mrobot_gazebo:mrobot_navigation:mrobot_teleop:navigation_msgs/map_msgs:navigation_msgs/move_base_msgs
+-DCATKIN_DEVEL_PREFIX=/home/lei/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lei/catkin_ws/install -G Unix Makefiles
