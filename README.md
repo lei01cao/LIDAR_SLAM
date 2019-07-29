@@ -23,6 +23,23 @@
 
 运行步骤：
 
+一.Gmapping构建地图
+
+Step1.PC端（master)：roscore
+
+Step2.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch(打开激光雷达和stm32通信串口)
+
+Step3.PC端（master):roslaunch mrobot_navigation gmapping_demo.launch
+
+Step4.PC端（master)：roslauch mrobot_teleop mrobot_teleop.launch
+
+    启动键盘控制节点，让机器人在室内环境（例如家里房间）移动探索，完成后保存地图。
+
+    rosrun map_server mapsaver -f caolei_room_map 
+
+
+二.Move_base导航路径规划
+
 
 
 
@@ -32,4 +49,6 @@
 
 
 2.ROS机器人开发实践  --胡春旭
+
+
 
