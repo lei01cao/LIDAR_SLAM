@@ -4,8 +4,7 @@
 实物展示：
 
 1.Stm32F103C8T6核心板和底板
-    <!-- ![stm32](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/stm32f103.jpg) -->
-    <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/stm32f103.jpg" title="stm32f103" height="350" width="400">
+    !<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/stm32f103.jpg" title="stm32f103" height="350" width="450">
 
 2.A4950双路电机驱动模块   
     ![motor_driver](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/motor_driver.jpg)
