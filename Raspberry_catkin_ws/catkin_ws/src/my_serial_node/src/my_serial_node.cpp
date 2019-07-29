@@ -3,7 +3,7 @@
  * 从cmd_vel话题中分解出速度值通过串口送到移动底盘
  * 从底盘串口接收里程消息整合到odometry话题用于发布
  * 
- * https://github.com/lei01cao/LIDAR_SLAM/tree/master/catkin_ws/src/my_serial_node
+ * https://github.com/lei01cao/LIDAR_SLAM/blob/master/Raspberry_catkin_ws/catkin_ws/src/my_serial_node/src/my_serial_node.cpp
  * *******************************/
 #include <ros/ros.h>
 #include <serial/serial.h>
