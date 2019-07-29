@@ -1,0 +1,20 @@
+--cpu Cortex-M3
+"..\obj\startup_stm32f10x_md.o"
+"..\obj\main.o"
+"..\obj\delay.o"
+"..\obj\sys.o"
+"..\obj\usart.o"
+"..\obj\led.o"
+"..\obj\key.o"
+"..\obj\oled.o"
+"..\obj\adc.o"
+"..\obj\timer.o"
+"..\obj\motor.o"
+"..\obj\encoder.o"
+"..\obj\usart2.o"
+"..\obj\control.o"
+"..\obj\show.o"
+--strict --scatter "..\OBJ\motor_control.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "..\OBJ\motor_control.map" -o ..\OBJ\motor_control.axf

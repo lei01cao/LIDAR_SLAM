@@ -1,8 +1,0 @@
-prefix=/home/lei/catkin_ws/devel
-
-Name: map_msgs
-Description: Description of map_msgs
-Version: 1.13.0
-Cflags: -I/home/lei/catkin_ws/devel/include
-Libs: -L/home/lei/catkin_ws/devel/lib 
-Requires: std_msgs sensor_msgs nav_msgs

@@ -1,8 +1,0 @@
-prefix=/home/lei/catkin_ws/devel
-
-Name: mrobot_navigation
-Description: Description of mrobot_navigation
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/lei/catkin_ws/devel/lib 
-Requires: 
