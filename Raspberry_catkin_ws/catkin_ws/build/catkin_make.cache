@@ -1,0 +1,2 @@
+mrobot_bringup:mrobot_description:mrobot_navigation:my_serial_node:navigation_msgs/map_msgs:navigation_msgs/move_base_msgs:rplidar_ros:serial
+-DCATKIN_DEVEL_PREFIX=/home/lei/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lei/catkin_ws/install -G Unix Makefiles
