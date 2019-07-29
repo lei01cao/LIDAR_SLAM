@@ -5,23 +5,28 @@
 
 1. Stm32F103C8T6核心板和底板
 
-    !<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/stm32f103.jpg" title="stm32f103" height="350" width="450">
+    <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/stm32f103.jpg" title="stm32f103" height="350" width="450">
 
 2. A4950双路电机驱动模块  
- 
-    ![motor_driver](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/motor_driver.jpg)
+
+    <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/motor_driver.jpg" title="motor_driver" height="350" width="450">
 
 3. 树莓派3B+
-    ![RaspberryPi-3B+](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/RaspberryPi-3B%2B.jpg)
+
+    <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/RaspberryPi-3B%2B.jpg" title="RaspberryPi-3B%2B" height="350" width="450">
 
 4. 两轮步进电机组(减速比30 编码器精度780)
-    ![step_motor](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/step_motor.jpg)
+
+    <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/step_motor.jpg" title="step_motor" height="350" width="450">
 
 5. 思岚A1激光雷达  
-    ![rplidar-A1](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/rplidar-A1.jpg)
+
+     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/rplidar-A1.jpg" title="rplidar-A1" height="350" width="450">
 
 6. 小车整体
-    ![robot_side](https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/robot_side.jpg)
+
+     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/robot_side.jpg" title="robot_side" height="350" width="450">
+
 
 运行步骤：
 
