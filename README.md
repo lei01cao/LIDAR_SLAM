@@ -42,12 +42,16 @@ Step4.PC端（master)：roslauch mrobot_teleop mrobot_teleop.launch
 
     启动键盘控制节点，让机器人在室内环境（例如家里房间）移动探索，完成后保存地图。
 
-    rosrun map_server mapsaver -f caolei_room_map 
+    rosrun map_server map_saver -f caolei_room_map 
 
 
 二.Move_base导航路径规划
 
+Step1.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch
 
+Step2.PC端（master):roslaunch mrobot_navigation nav_demo.launch
+
+    rviz界面中点击菜单栏“2D Nav Goal"按钮，在地图上任意选择一个目标点。 
 
 
 参考资料：
