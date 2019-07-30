@@ -43,9 +43,10 @@ Step4.PC端（master)：roslauch mrobot_teleop mrobot_teleop.launch
     启动键盘控制节点，让机器人在室内环境（例如家里房间）移动探索，完成后保存地图。
 
     rosrun map_server map_saver -f caolei_room_map 
+<center class="half">
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_start.png" title="gmapping_start" height="350" width="400">
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_finish.png" title="gmapping_finish" height="350" width="400">
-
+</center>
 二.Move_base导航路径规划
 
 Step1.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch
