@@ -44,7 +44,7 @@ Step4.PC端（master)：roslauch mrobot_teleop mrobot_teleop.launch
 
     rosrun map_server map_saver -f caolei_room_map 
 
-    <center class="half">
+   <center class="half">
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_start.png" title="gmapping_start" height="300" width="350">
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_finish.png" title="gmapping_finish" height="300" width="350">
     </center>
