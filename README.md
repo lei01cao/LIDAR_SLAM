@@ -45,7 +45,6 @@ Step4.PC端（master)：roslauch mrobot_teleop mrobot_teleop.launch
     rosrun map_server map_saver -f caolei_room_map 
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_start.png" title="gmapping_start" height="350" width="400"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_finish.png" title="gmapping_finish" height="350" width="400">
 
-
 二.Move_base导航路径规划
 
 Step1.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch
