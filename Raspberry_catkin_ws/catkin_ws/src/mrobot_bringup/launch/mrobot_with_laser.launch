@@ -12,7 +12,7 @@
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher">
         <param name="publish_frequency" type="double" value="5.0" />
     </node>
-    <node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 1 /base_link /laser 50"/>
+    <node name="base2laser" pkg="tf" type="static_transform_publisher" args="0 0.08 0 -1.57 0 0  /base_link /laser 50"/>
 
     <!-- 里程计估算 -->
     <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">

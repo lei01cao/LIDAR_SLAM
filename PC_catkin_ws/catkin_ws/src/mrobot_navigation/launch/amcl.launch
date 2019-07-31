@@ -16,6 +16,20 @@
         <param name="kld_z" value="0.99"/>
         <param name="odom_alpha1" value="0.2"/>
         <param name="odom_alpha2" value="0.2"/>
+
+        <!--~initial_pose_x (double, default: 0.0 meters)-->
+        <param name="initial_pose_x" value="0.0"/>
+        <!--~initial_pose_y (double, default: 0.0 meters)-->
+        <param name="initial_pose_y" value="0.0"/>
+        <!--~initial_pose_a (double, default: 0.0 radians)-->
+        <param name="initial_pose_a" value="0.0"/>
+        <!--~initial_cov_xx (double, default: 0.5*0.5 meters)-->
+        <param name="initial_cov_xx" value="0.5*0.5"/>
+        <!--~initial_cov_yy (double, default: 0.5*0.5 meters)-->
+        <param name="initial_cov_yy" value="0.5*0.5"/>
+        <!--~initial_cov_aa (double, default: (π/12)*(π/12) radian)-->
+        <param name="initial_cov_aa" value="(π/12)*(π/12)"/>
+
         <!-- translation std dev, m -->
         <param name="odom_alpha3" value="0.2"/>
         <param name="odom_alpha4" value="0.2"/>
@@ -26,12 +40,23 @@
         <param name="laser_sigma_hit" value="0.2"/>
         <param name="laser_lambda_short" value="0.1"/>
         <param name="laser_model_type" value="likelihood_field"/>
+
         <!-- <param name="laser_model_type" value="beam"/> -->
         <param name="laser_likelihood_max_dist" value="2.0"/>
-        <param name="update_min_d" value="0.25"/>
-        <param name="update_min_a" value="0.2"/>
+        <param name="update_min_d" value="0.05"/>
+        <param name="update_min_a" value="π/12"/>
+        
+
+        <!-- ~odom_frame_id (string, default: "odom")
+        Which frame to use for odometry. -->
         <param name="odom_frame_id" value="odom"/>
-        <param name="resample_interval" value="1"/>
+        <!-- ~base_frame_id (string, default: "base_link")
+        Which frame to use for the robot base. -->
+        <param name="base_frame_id" value="base_link"/>
+        <!-- ~global_frame_id (string, default: "map")
+        The name of the coordinate frame published by the localization system. -->
+        <param name="global_frame_id" value="map"/>
+        <param name="resample_interval" value="2"/>
         <!-- Increase tolerance because the computer can get quite busy -->
         <param name="transform_tolerance" value="1.0"/>
         <param name="recovery_alpha_slow" value="0.0"/>
