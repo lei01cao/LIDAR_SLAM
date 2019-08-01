@@ -1,10 +1,17 @@
+#全局代价地图参数配置
 global_costmap:
    global_frame: /map
    robot_base_frame: /base_footprint
+   transform_tolerance: 2.0
+
+   #Rate parameters
    update_frequency: 1.0
-   publish_frequency: 0
+   publish_frequency: 0.0
+
+   #map params
    static_map: true
    rolling_window: false
-   resolution: 0.01
-   transform_tolerance: 1.0
-   map_type: costmap
+
+   plugins:
+     - {name: static_layer,               type: "costmap_2d::StaticLayer"}
+     - {name: global_inflation_layer,     type: "costmap_2d::InflationLayer"}

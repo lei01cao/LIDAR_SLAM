@@ -1,8 +1,0 @@
-prefix=/home/lei/catkin_ws/devel
-
-Name: move_base_msgs
-Description: Description of move_base_msgs
-Version: 1.13.0
-Cflags: -I/home/lei/catkin_ws/devel/include
-Libs: -L/home/lei/catkin_ws/devel/lib 
-Requires: 

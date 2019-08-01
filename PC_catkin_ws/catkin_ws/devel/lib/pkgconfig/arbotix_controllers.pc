@@ -1,8 +1,0 @@
-prefix=/home/lei/catkin_ws/devel
-
-Name: arbotix_controllers
-Description: Description of arbotix_controllers
-Version: 0.10.0
-Cflags: 
-Libs: -L/home/lei/catkin_ws/devel/lib 
-Requires: 
