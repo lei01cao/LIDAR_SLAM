@@ -62,6 +62,8 @@ Step2.PC端（master):roslaunch mrobot_navigation nav_demo.launch
 
 3.ros导航包源码：https://github.com/ros-planning/navigation
 
+4.teb_local_planner源码包：https://github.com/rst-tu-dortmund/teb_local_planner
+
 
 
 
