@@ -31,7 +31,7 @@
 运行步骤：
 
 一.Gmapping构建地图
-
+<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping.png" title="gmapping">
 Step1.PC端（master)：roscore
 
 Step2.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch(打开激光雷达和stm32通信串口)
