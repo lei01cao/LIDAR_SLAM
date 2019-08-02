@@ -52,7 +52,7 @@ Step1.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch
 Step2.PC端（master):roslaunch mrobot_navigation nav_demo.launch
 
     rviz界面中点击菜单栏“2D Nav Goal"按钮，在地图上任意选择一个目标点。 
-<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test0.png" title="nav_test3" height="350" width="400"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test1.png" title="nav_test4" height="350" width="400">
+<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test3.png" title="nav_test3" height="350" width="400"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test4.png" title="nav_test4" height="350" width="400">
 
 参考资料：
 
