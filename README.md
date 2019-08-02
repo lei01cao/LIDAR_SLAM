@@ -46,12 +46,17 @@ Step4.PC端（master)：roslauch mrobot_teleop mrobot_teleop.launch
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_start.png" title="gmapping_start" height="350" width="400"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping_finish.png" title="gmapping_finish" height="350" width="400">
 
 二.Move_base导航路径规划
+<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/move_base.png" title="move_base">
 
 Step1.树莓派端：roslaunch mrobot_bringup mrobot_with_laser.launch
 
 Step2.PC端（master):roslaunch mrobot_navigation nav_demo.launch
 
-    rviz界面中点击菜单栏“2D Nav Goal"按钮，在地图上任意选择一个目标点。 
+    rviz界面中点击菜单栏“2D Nav Goal"按钮，在地图上任意选择一个目标点。
+
+    使用teb_local_planner,导航效果： 
+<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/teb_local_planner.png" title="teb_local_planner">
+
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test3.png" title="nav_test3" height="350" width="400"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test4.png" title="nav_test4" height="350" width="400">
 
 参考资料：
