@@ -31,6 +31,7 @@
 运行步骤：
 
 一.Gmapping构建地图
+
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/gmapping.png" title="gmapping">
 Step1.PC端（master)：roscore
 
