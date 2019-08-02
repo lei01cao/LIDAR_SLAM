@@ -15,7 +15,7 @@
 
 #define	sBUFFERSIZE	6//send buffer size 串口发送缓存长度
 #define	rBUFFERSIZE	9//receive buffer size 串口接收缓存长度
-const double ROBOT_LENGTH = 0.18;
+const double ROBOT_LENGTH = 0.15025;
 static unsigned char s_buffer[sBUFFERSIZE];//发送缓存
 static unsigned char r_buffer[rBUFFERSIZE];//接收缓存
 double x_ , vx_;
@@ -71,16 +71,8 @@ void data_pack(const geometry_msgs::Twist& cmd_vel){
 	float r,yawrate;
 	float_union Vx,Vy,Ang_v;
 	Vx.fvalue = cmd_vel.linear.x;
-
-	//Vy.fvalue = cmd_vel.linear.y;
 	Ang_v.fvalue = cmd_vel.angular.z;
 
-	//if(Ang_v.fvalue > 0)
-        //theta_to_speed = 0.077; //右转系数  
-    //else
-        //theta_to_speed = 0.076; //左转系数  
-          
-    //yawrate = (Ang_v.fvalue * 0.2) / theta_to_speed;
     yawrate = Ang_v.fvalue;
 	r = Vx.fvalue / yawrate;
 	if(Vx.fvalue == 0)
@@ -98,9 +90,6 @@ void data_pack(const geometry_msgs::Twist& cmd_vel){
 	  v_left = yawrate * (r - 0.09);
 	  v_right = yawrate * (r + 0.09);
 	}
-	//v_left = Vx.fvalue - yawrate/2;
-        //v_right = Vx.fvalue + yawrate/2;
-	//0x34 0.1665 0.0032
 	if(v_left > 0)
 		dir_left_hex = 0;
 	else
@@ -111,8 +100,8 @@ void data_pack(const geometry_msgs::Twist& cmd_vel){
 	else
 		dir_right_hex = 0;
 
-	v_left_hex = (fabs)((int)(v_left*0.571 / 0.0064));
-	v_right_hex = (fabs)((int)(v_right*0.571 / 0.0064));
+	v_left_hex = (fabs)((int)(v_left*0.571*0.96/ 0.0064)); //0.96为计算误差补偿系数
+	v_right_hex = (fabs)((int)(v_right*0.571*0.96 / 0.0064));    //0.96为计算误差补偿系数
 	memset(s_buffer,0,sizeof(s_buffer));
 
 	/********head********/
@@ -126,30 +115,6 @@ void data_pack(const geometry_msgs::Twist& cmd_vel){
 	s_buffer[5] = dir_right_hex; //Right_Motor_Dir
 
 	// //数据打包
-	// s_buffer[0] = 0xff;
-	// s_buffer[1] = 0xff;
-	// //Vx
-	// s_buffer[2] = Vx.cvalue[0];
-	// s_buffer[3] = Vx.cvalue[1];
-	// s_buffer[4] = Vx.cvalue[2];
-	// s_buffer[5] = Vx.cvalue[3];
-	// //Vy
-	// s_buffer[6] = Vy.cvalue[0];
-	// s_buffer[7] = Vy.cvalue[1];
-	// s_buffer[8] = Vy.cvalue[2];
-	// s_buffer[9] = Vy.cvalue[3];
-	// //Ang_v
-	// s_buffer[10] = Ang_v.cvalue[0];
-	// s_buffer[11] = Ang_v.cvalue[1];
-	// s_buffer[12] = Ang_v.cvalue[2];
-	// s_buffer[13] = Ang_v.cvalue[3];
-	// //CRC
-	// s_buffer[14] = s_buffer[2]^s_buffer[3]^s_buffer[4]^s_buffer[5]^s_buffer[6]^s_buffer[7]^
-	// 				s_buffer[8]^s_buffer[9]^s_buffer[10]^s_buffer[11]^s_buffer[12]^s_buffer[13];
-	
-	// for(int i=0; i<sBUFFERSIZE; i++){
-	// 	ROS_INFO("write speed:0x%02x",s_buffer[i]);
-	// }
 	
 	ser.write(s_buffer,sBUFFERSIZE);
 	memset(s_buffer,0,sizeof(s_buffer));
@@ -179,45 +144,11 @@ bool readSpeed()
 	unsigned char checkSum;
     //ROS_INFO("read odom.");
     // 读取串口数据
-	//boost::asio::read(sp, boost::asio::buffer(buf));
 	ser.read(r_buffer,rBUFFERSIZE);
 	ros::Time curr_time;
 
-
-     // for(i=0;i<rBUFFERSIZE;i++)
-     //   ROS_INFO("0x%02x",r_buffer[i]);
-	// for (i = 0; i < 2; i++)
-	// 	receive_header.data[i] = buf[i];
-	
- //    // 检查信息头
-	// if (receive_header.data[0] != header[0] || receive_header.data[1] != header[1])
-	// {
-	// 	ROS_ERROR("Received message header error!");
- //        return false;
-	// }
-
-	// for (i = 0; i < 2; i++)
-	// 	receive_command.data[i] = buf[i + 2];
-	
-	// length = buf[4];
 	checkSum = getCrc8(r_buffer, 8);
-    
-    // 检查信息类型
- //    if(receive_command.d != SPEED_INFO)
-	// {
-	// 	ROS_ERROR("Received command error!");
- //        return false;
-	// }
 
- //    // 检查信息尾
- //    if (buf[6 + length] != ender[0] || buf[6 + length + 1] != ender[1])
-	// {
-	// 	ROS_ERROR("Received message header error!");
- //        return false;
-	// }
-    
- //    检查信息校验值
- //    ReceiveCheckSum.data[0] = buf[8];
     if (checkSum != r_buffer[8])
 	{
 		ROS_ERROR("Received data check sum error!");
@@ -317,16 +248,6 @@ int main (int argc, char** argv)
     }
 	//定义tf 对象
 	static tf::TransformBroadcaster odom_broadcaster_;
-	//定义tf发布时需要的类型消息
-	//geometry_msgs::TransformStamped odom_trans;
-	//定义里程计消息对象
-	//nav_msgs::Odometry odom;
-	//定义四元数变量
-	//geometry_msgs::Quaternion odom_quat;
-	//位置 速度 角速度
-	//float_union posx,posy,vx,vy,va,yaw;
-	//定义时间
-	// ros::Time current_time, last_time;
 	current_time = ros::Time::now();
 	last_time = ros::Time::now();
 
@@ -357,7 +278,7 @@ int main (int argc, char** argv)
 		    odom_trans.transform.translation.y = y_;
 		    odom_trans.transform.translation.z = 0.0;
 		    odom_trans.transform.rotation = odom_quat;
-		    ROS_INFO("rotation = %f",odom_quat);
+		    // ROS_INFO("rotation = %f",odom_quat.w);
 		    odom_broadcaster_.sendTransform(odom_trans);
 
 		    // 发布里程计消息
@@ -372,7 +293,8 @@ int main (int argc, char** argv)
 		    msgl.pose.covariance = odom_pose_covariance;
 		    ROS_INFO("x_ = %f",x_);
 		    ROS_INFO("y_ = %f",y_);
-            ROS_INFO("orientation = %f",odom_quat);
+            ROS_INFO("th_ = %f", th_);
+            ROS_INFO("orientation = %f",odom_quat.w);
 		    msgl.child_frame_id = "base_footprint";
 		    msgl.twist.twist.linear.x = vx_;
 		    msgl.twist.twist.linear.y = vy_;
@@ -383,63 +305,8 @@ int main (int argc, char** argv)
 
 		    msgl.twist.covariance = odom_twist_covariance;
 		    read_pub.publish(msgl);
-		     //pub_.publish(msgl);
-			// ser.read(r_buffer,rBUFFERSIZE);
-			// int i;
-			// for(i=0;i<rBUFFERSIZE;i++)
-				// ROS_INFO("[0x%02x]",r_buffer[i]);
-			
-			// if(data_analysis(r_buffer) != 0){
-			// 	int i;
-			// 	for(i=0;i<4;i++){
-			// 		posx.cvalue[i] = r_buffer[2+i];//x 坐标
-			// 		posy.cvalue[i] = r_buffer[6+i];//y 坐标
-			// 		vx.cvalue[i] = r_buffer[10+i];// x方向速度
-			// 		vy.cvalue[i] = r_buffer[14+i];//y方向速度
-			// 		va.cvalue[i] = r_buffer[18+i];//角速度
-			// 		yaw.cvalue[i] = r_buffer[22+i];	//yaw 偏航角
-			// 	}	
-			// 	ROS_INFO("va.fvalue = %f",va.fvalue);
-			// 	ROS_INFO("yaw.fvalue = %f",yaw.fvalue);
-			// {
-			// 	//将偏航角转换成四元数才能发布
-			// 	odom_quat = tf::createQuaternionMsgFromYaw(yaw.fvalue);
-				
-			// 	//发布坐标变换父子坐标系
-			// 	odom_trans.header.frame_id = "odom";
-			// 	odom_trans.child_frame_id = "base_link";
-			// 	//填充获取的数据
-			// 	odom_trans.transform.translation.x = posx.fvalue;//x坐标
-			// 	odom_trans.transform.translation.y = posy.fvalue;//y坐标
-			// 	odom_trans.transform.translation.z = 0;//z坐标				
-			// 	odom_trans.transform.rotation = odom_quat;//偏航角
-			// 	//发布tf坐标变换
-			// 	odom_broadcaster.sendTransform(odom_trans);
-			// 	//获取当前时间
-			// 	current_time = ros::Time::now();
-			// 	//载入里程计时间戳
-			// 	odom.header.stamp = current_time;
-			// 	//里程计父子坐标系
-			// 	odom.header.frame_id = "odom";
-			// 	odom.child_frame_id = "base_link";
-			// 	//里程计位置数据
-			// 	odom.pose.pose.position.x = posx.fvalue;
-			// 	odom.pose.pose.position.y = posy.fvalue;
-			// 	odom.pose.pose.position.z = 0;
-			// 	odom.pose.pose.orientation = odom_quat;
-			// 	//载入线速度和角速度
-			// 	odom.twist.twist.linear.x = vx.fvalue;
-			// 	odom.twist.twist.linear.y = vy.fvalue;
-			// 	odom.twist.twist.angular.z = va.fvalue;
-			// 	//发布里程计消息
-			// 	read_pub.publish(odom);
-			// 	ROS_INFO("publish odometry");
-			// 	last_time = current_time;				
-			// }
-			//memset(r_buffer,0,rBUFFERSIZE);
         }
         loop_rate.sleep();
-        //ROS_INFO("!!!!!!!!!!!!");
 
     }
 }
