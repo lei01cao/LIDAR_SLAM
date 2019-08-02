@@ -55,8 +55,7 @@ Step2.PC端（master):roslaunch mrobot_navigation nav_demo.launch
     rviz界面中点击菜单栏“2D Nav Goal"按钮，在地图上任意选择一个目标点。
 
     使用teb_local_planner,导航效果： 
-<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/teb_local_planner.png" title="teb_local_planner">
-<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/cost_map.png" title="cost_map">
+<img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/teb_local_planner.png" title="teb_local_planner"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/cost_map.png" title="cost_map">
 
 <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test3.png" title="nav_test3" height="350" width="400"><img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/nav_test4.png" title="nav_test4" height="350" width="400">
 
