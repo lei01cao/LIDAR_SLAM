@@ -19,7 +19,7 @@ obstacle_layer: #障碍层
   observation_sources: laser_scan_sensor #point_cloud_sensor
   laser_scan_sensor:
     topic: /scan
-    sensor_frame: /base_laser_link
+    sensor_frame: /laser_link
     data_type: LaserScan
     clearing: true
     marking: true
