@@ -8,11 +8,13 @@
     <!-- 运行地图服务器，并且加载设置的地图-->
     <node name="map_server" pkg="map_server" type="map_server" args="$(find mrobot_navigation)/maps/$(arg map)"/>
 
+    <!-- 启动AMCL节点 -->
+    <include file="$(find mrobot_navigation)/launch/amcl.launch" />
+
+    
     <!-- 运行move_base节点 -->
     <include file="$(find mrobot_navigation)/launch/move_base.launch" />
 
-    <!-- 启动AMCL节点 -->
-    <include file="$(find mrobot_navigation)/launch/amcl.launch" />
 
     <!-- 设置一个/odom与/map之间的静态坐标变换 -->
     <!-- <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /map /odom 100" /> -->

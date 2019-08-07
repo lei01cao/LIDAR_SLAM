@@ -1,8 +1,8 @@
-prefix=/home/lei/catkin_ws/devel
+prefix=/home/lei/caolei_github/LIDAR_SLAM/PC_catkin_ws/catkin_ws/devel
 
 Name: mrobot_navigation
 Description: Description of mrobot_navigation
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/lei/catkin_ws/devel/lib 
+Libs: -L/home/lei/caolei_github/LIDAR_SLAM/PC_catkin_ws/catkin_ws/devel/lib 
 Requires: 

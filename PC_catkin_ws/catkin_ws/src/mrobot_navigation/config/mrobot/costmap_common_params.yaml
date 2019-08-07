@@ -4,7 +4,7 @@ footprint: [[0.15, 0.10], [-0.08, 0.10], [-0.08, -0.10], [0.15, -0.10]]
 #plugins layers list
 static_layer:    #静态层
   enable: true
-  unknown_cost_value: -1
+  unknown_cost_value: -1 
   lethal_cost_threshold: 100
   map_topic: /map
   first_map_only: false
@@ -23,17 +23,17 @@ obstacle_layer: #障碍层
     data_type: LaserScan
     clearing: true
     marking: true
-    obstacle_range: 2.0
-    raytrace_range: 3.0
+    obstacle_range: 0.5
+    raytrace_range: 1.0
     track_unknow_space: true
 
 global_inflation_layer: #全局膨胀层
   enabled: true
-  inflation_radius: 1.0
+  inflation_radius: 0.15
   cost_scaling_factor: 2.0
 
 local_inflation_layer: #局部膨胀层
   enabled: true
-  inflation_radius: 0.15
+  inflation_radius: 0.10
   cost_scaling_factor: 5.0
 #详情参考wiki官方教程：http://wiki.ros.org/costmap_2d

@@ -6,9 +6,11 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1/Links1/base_footprint1
+        - /Local Plan1
+        - /Global Plan1
         - /Pose Array1
       Splitter Ratio: 0.652661026
-    Tree Height: 691
+    Tree Height: 363
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -26,7 +28,9 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
+Toolbars:
+  toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -136,7 +140,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        front_castor_link:
+        front_caster_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -166,32 +170,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_castor_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         right_motor:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        standoff_2in_0_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        standoff_2in_10_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        standoff_2in_11_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -236,11 +220,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        standoff_2in_9_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -277,7 +256,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /move_base/TrajectoryPlannerROS/local_plan
+      Topic: /move_base/TebLocalPlannerROS/local_plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -300,7 +279,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /move_base/TrajectoryPlannerROS/global_plan
+      Topic: /move_base/TebLocalPlannerROS/global_plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -385,6 +364,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
+    Default Light: true
     Fixed Frame: map
     Frame Rate: 30
   Name: root
@@ -400,7 +380,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -3.50500631
+      Angle: 0.0299942009
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -413,16 +393,16 @@ Visualization Manager:
       Scale: 78.0899429
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 4.82028627
-      Y: 2.68213344
+      X: -0.249301583
+      Y: -0.456182212
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 904
+  Height: 576
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000342fc0200000005fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000198000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000342000000dd00ffffff000000010000010f00000270fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000270000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a00000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000004280000034200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a000001fafc0200000005fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730200000188000001b500000198000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000001fa000000d700ffffff000000010000010f00000270fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000270000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a00000030000fffffffb0000000800540069006d006501000000000000045000000000000000000000016f000001fa00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -431,6 +411,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1432
-  X: 281
-  Y: 70
+  Width: 735
+  X: 65
+  Y: 24
