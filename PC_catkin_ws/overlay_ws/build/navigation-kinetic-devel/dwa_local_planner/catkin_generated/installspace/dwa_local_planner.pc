@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: dwa_local_planner
+Description: Description of dwa_local_planner
+Version: 1.14.4
+Cflags: -I/home/lei/overlay_ws/install/include
+Libs: -L/home/lei/overlay_ws/install/lib -ldwa_local_planner
+Requires: dynamic_reconfigure nav_msgs pluginlib roscpp

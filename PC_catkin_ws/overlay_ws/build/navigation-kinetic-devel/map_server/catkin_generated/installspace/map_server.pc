@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: map_server
+Description: Description of map_server
+Version: 1.14.4
+Cflags: -I/home/lei/overlay_ws/install/include
+Libs: -L/home/lei/overlay_ws/install/lib -lmap_server_image_loader
+Requires: roscpp nav_msgs tf2

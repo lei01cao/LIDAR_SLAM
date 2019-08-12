@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: move_slow_and_clear
+Description: Description of move_slow_and_clear
+Version: 1.14.4
+Cflags: -I/home/lei/overlay_ws/install/include
+Libs: -L/home/lei/overlay_ws/install/lib -lmove_slow_and_clear
+Requires: geometry_msgs nav_core pluginlib roscpp

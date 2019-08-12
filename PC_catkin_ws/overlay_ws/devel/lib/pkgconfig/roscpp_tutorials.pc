@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/devel
+
+Name: roscpp_tutorials
+Description: Description of roscpp_tutorials
+Version: 0.9.1
+Cflags: -I/home/lei/overlay_ws/devel/include
+Libs: -L/home/lei/overlay_ws/devel/lib 
+Requires: message_runtime std_msgs

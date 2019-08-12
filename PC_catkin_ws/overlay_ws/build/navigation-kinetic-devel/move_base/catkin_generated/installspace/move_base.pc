@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: move_base
+Description: Description of move_base
+Version: 1.14.4
+Cflags: -I/home/lei/overlay_ws/install/include
+Libs: -L/home/lei/overlay_ws/install/lib 
+Requires: dynamic_reconfigure geometry_msgs move_base_msgs nav_msgs roscpp

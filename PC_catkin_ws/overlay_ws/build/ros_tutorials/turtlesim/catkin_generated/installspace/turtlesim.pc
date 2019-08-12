@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: turtlesim
+Description: Description of turtlesim
+Version: 0.9.1
+Cflags: -I/home/lei/overlay_ws/install/include
+Libs: -L/home/lei/overlay_ws/install/lib 
+Requires: geometry_msgs message_runtime std_msgs std_srvs

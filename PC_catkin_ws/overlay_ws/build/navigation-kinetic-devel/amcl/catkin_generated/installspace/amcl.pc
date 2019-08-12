@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: amcl
+Description: Description of amcl
+Version: 1.14.4
+Cflags: -I/home/lei/overlay_ws/install/include
+Libs: -L/home/lei/overlay_ws/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Requires: rosbag roscpp dynamic_reconfigure tf nav_msgs std_srvs

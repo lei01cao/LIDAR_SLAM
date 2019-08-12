@@ -1,0 +1,8 @@
+prefix=/home/lei/overlay_ws/install
+
+Name: mrobot_navigation
+Description: Description of mrobot_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lei/overlay_ws/install/lib 
+Requires: 
