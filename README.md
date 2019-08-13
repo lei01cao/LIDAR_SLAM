@@ -11,19 +11,22 @@
 
     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/motor_driver.jpg" title="motor_driver" height="350" width="450">
 
-3. 树莓派3B+
+3. IMU(MPU-6050)
+    <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/MPU-6050.jpg" title="IMU" height="350" width="450">
+
+4. 树莓派3B+
 
     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/RaspberryPi-3B%2B.jpg" title="RaspberryPi-3B%2B" height="350" width="450">
 
-4. 两轮步进电机组(减速比30 编码器精度780)
+5. 两轮步进电机组(减速比30 编码器精度780)
 
     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/step_motor.jpg" title="step_motor" height="350" width="450">
 
-5. 思岚A1激光雷达  
+6. 思岚A1激光雷达  
 
      <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/rplidar-A1.jpg" title="rplidar-A1" height="350" width="450">
 
-6. 小车整体
+7. 小车整体
 
      <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/robot_side.jpg" title="robot_side" height="350" width="450">
 
