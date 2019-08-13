@@ -12,6 +12,7 @@
     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/motor_driver.jpg" title="motor_driver" height="350" width="450">
 
 3. IMU(MPU-6050)
+
     <img src="https://github.com/lei01cao/LIDAR_SLAM/blob/master/img/MPU-6050.jpg" title="IMU" height="350" width="450">
 
 4. 树莓派3B+
