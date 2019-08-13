@@ -23,17 +23,17 @@ obstacle_layer: #障碍层
     data_type: LaserScan
     clearing: true
     marking: true
-    obstacle_range: 0.5
-    raytrace_range: 1.0
+    obstacle_range: 1.0  #障碍物探测范围
+    raytrace_range: 2.0  #机器人运动过程中，实时清除代价地图中的障碍物
     track_unknow_space: true
 
 global_inflation_layer: #全局膨胀层
   enabled: true
-  inflation_radius: 0.15
+  inflation_radius: 0.15 #机器人和障碍物之间保持的最小距离
   cost_scaling_factor: 2.0
 
 local_inflation_layer: #局部膨胀层
   enabled: true
-  inflation_radius: 0.10
+  inflation_radius: 0.10 #机器人和障碍物之间保持的最小距离
   cost_scaling_factor: 5.0
 #详情参考wiki官方教程：http://wiki.ros.org/costmap_2d

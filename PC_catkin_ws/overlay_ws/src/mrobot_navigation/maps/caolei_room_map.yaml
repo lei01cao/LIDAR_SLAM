@@ -1,7 +1,7 @@
-image: caolei_room_map.pgm
-resolution: 0.050000
-origin: [-13.800000, -12.200000, 0.000000]
-negate: 0
-occupied_thresh: 0.65
-free_thresh: 0.196
+image: caolei_room_map.pgm #地图路径
+resolution: 0.050000      #地图的分辨率，米/像素
+origin: [-13.800000, -12.200000, 0.000000] #地图中左下像素的2-D姿态为(x, y, yaw),偏航为逆时针旋转（yaw = 0表示无旋转）
+negate: 0  #白/黑自由/占用语义是否应该被反转（阈值的解释不受影响）
+occupied_thresh: 0.90 #占用概率大于该阈值的像素被认为是完全占用
+free_thresh: 0.196 #占用概率小于该阈值的像素被认为是完全自由的
 

@@ -1,6 +1,6 @@
 #全局代价地图参数配置
 global_costmap:
-   global_frame: /map
+   global_frame: /map #定义机器人和地图之间的坐标变换，建立全局代价地图必须使用这个变换
    robot_base_frame: /base_footprint
    transform_tolerance: 2.0
 
